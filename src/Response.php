@@ -4,9 +4,9 @@ namespace LightRPC;
 
 use GuzzleHttp\Psr7\Response as HttpResponse;
 use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
-use Illuminate\Contracts\Support\Jsonable;
 use JsonSerializable;
 
 /**
@@ -48,6 +48,7 @@ class Response implements Arrayable, Jsonable, JsonSerializable
 
     /**
      * Response constructor.
+     *
      * @param HttpResponse $httpResponse
      */
     public function __construct(HttpResponse $httpResponse)
@@ -211,7 +212,6 @@ class Response implements Arrayable, Jsonable, JsonSerializable
             // parse the response data, from result or error.
             $this->data = collect(array_get($body, $this->isError ? 'error' : 'result', []));
         }
-
 
         // just return the response body.
         return $this->body;
