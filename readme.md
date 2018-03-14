@@ -1,5 +1,10 @@
 # LightRPC
 
+[![Build Status](https://travis-ci.org/hernandev/light-rpc.svg?branch=master)](https://travis-ci.org/hernandev/light-rpc)
+[![Codecov](https://codecov.io/gh/hernandev/light-rpc/branch/master/graph/badge.svg)](https://codecov.io/gh/hernandev/light-rpc)
+[![Latest Stable Version](https://poser.pugx.org/hernandev/light-rpc/v/stable)](https://packagist.org/packages/hernandev/light-rpc)
+[![License](https://poser.pugx.org/hernandev/light-rpc/license)](https://packagist.org/packages/hernandev/light-rpc)
+
 **LightRPC**: An easy, simple and effective `JSON-RPC` 2 client for PHP.
 
 #### This client was designed inspired by the Javascript project [LightRPC](https://github.com/busyorg/lightrpc).
