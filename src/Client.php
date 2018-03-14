@@ -2,9 +2,9 @@
 
 namespace LightRPC;
 
+use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Psr7\Request as HttpRequest;
 use GuzzleHttp\Psr7\Response as HttpResponse;
-use GuzzleHttp\Client as HttpClient;
 
 /**
  * Class Client.
@@ -25,7 +25,7 @@ class Client
      * @var array Default list of headers.
      */
     protected $headers = [
-        'Accept' => 'application/json',
+        'Accept'       => 'application/json',
         'Content-Type' => 'application/json',
     ];
 
@@ -35,7 +35,7 @@ class Client
      * Client constructor.
      *
      * @param string $serverUrl
-     * @param array  $headers List of default headers.
+     * @param array  $headers   List of default headers.
      */
     public function __construct(string $serverUrl, array $headers = [])
     {
@@ -51,6 +51,7 @@ class Client
 
     /**
      * @param array ...$parameters
+     *
      * @return mixed|\Psr\Http\Message\ResponseInterface
      */
     public function call(...$parameters)
@@ -80,7 +81,7 @@ class Client
      * Sends the HTTP requests to the JSON-RPC server.
      *
      * @param array|string $body
-     * @param string $method
+     * @param string       $method
      *
      * @return HttpResponse
      */
@@ -88,7 +89,6 @@ class Client
     {
         // parse the body as json string, if the input value was an array.
         $jsonBody = is_array($body) ? json_encode($body) : $body;
-
 
         // creates a new http request, from the provided data.
         $request = new HttpRequest($method, $this->server, $this->headers, $jsonBody);

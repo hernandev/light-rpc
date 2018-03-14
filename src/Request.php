@@ -3,9 +3,9 @@
 namespace LightRPC;
 
 use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Support\Collection;
 use JsonSerializable;
-use Illuminate\Contracts\Support\Jsonable;
 
 /**
  * Class Request.
@@ -124,10 +124,10 @@ class Request implements Arrayable, JsonSerializable, Jsonable
     public function toArray()
     {
         return [
-            'id' => $this->id,
-            'method' => $this->method,
+            'id'      => $this->id,
+            'method'  => $this->method,
             'jsonrpc' => $this->version,
-            'params' => $this->params->toArray(),
+            'params'  => $this->params->toArray(),
         ];
     }
 
