@@ -52,7 +52,7 @@ class Client
     /**
      * @param array ...$parameters
      *
-     * @return mixed|\Psr\Http\Message\ResponseInterface
+     * @return Response
      */
     public function call(...$parameters)
     {
